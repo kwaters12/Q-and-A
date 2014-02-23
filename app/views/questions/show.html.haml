@@ -1,0 +1,14 @@
+.row
+  .col-md-12  
+    #question-show
+      %h3
+        %span.topic Topic:
+        %span.topic-name #{@question.topic}
+      %h4 Question:
+      = @question.body
+      %h3 Answers:     
+      - @answers.each do |answer|      
+        .answer
+          %h4           
+            %span.topic-name - #{answer.body}
+= render "/answers/form", answer: @answer, question: @question

@@ -1,0 +1,5 @@
+= form_for [@question, answer] do |f| 
+  .form-group
+    = f.label :body, "Enter New Answer" 
+    = f.text_field :body, class: "form-control" 
+    = f.submit class: "btn btn-default"

@@ -1,0 +1,107 @@
+@import 'bootstrap';
+
+
+body {background-color: #3E454C; color: #FFF6E5;word-wrap: break-word;}
+h3 {margin: 0;}
+h5 {margin: 0;padding: 5px;}
+a {color: white;}
+a:hover {text-decoration: none; color: #FFF6E5; }
+#name {float: right; text-align: right;}
+.navbar-default { background-color: #7ECEFD; border: 0; border-radius: 0; color: #FFF6E5;}
+#question {  padding: 10px; margin-bottom: 10px; }
+
+.answer {background-color: #7ECEFD; font-size: 0.6em;  }
+.topic {color: #FF7F66; margin-top: 0; font-weight: bold;}
+.topic-name {margin-top: 0; font-weight: normal;}
+.edit {background-color: #3E454C; color: #FF7F66;text-align: right; display: block; padding-right: 5px;}
+
+article {width: 100%; }
+article section { width: 30%; float: left; margin: 1%; }
+section { 
+  background-color: #2185C5; 
+  border: 1px solid #4596c9; 
+  margin: 5px;
+  padding: 4px;
+  display: block;
+  float: left;
+  min-height: 275px;
+}
+
+section:hover { background: #4596c9; border: 1px solid #2185C5; }
+
+
+.q-button {
+
+  background-color: #2185C5;
+  -webkit-border-top-left-radius:0px;
+  -moz-border-radius-topleft:0px;
+  border-top-left-radius:0px;
+  -webkit-border-top-right-radius:0px;
+  -moz-border-radius-topright:0px;
+  border-top-right-radius:0px;
+  -webkit-border-bottom-right-radius:0px;
+  -moz-border-radius-bottomright:0px;
+  border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:0px;
+  -moz-border-radius-bottomleft:0px;
+  border-bottom-left-radius:0px;
+  text-indent:0;
+  border:1px solid #2185C5;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:40px;
+  line-height:40px;
+  width:100%;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #528ecc;
+}
+.q-button:hover {
+  background-color:#4596c9; 
+}.q-button:active {
+  position:relative;
+  top:1px;
+}
+
+
+// media query code courtesy of tutorial from James
+@media (min-width: 980px) {
+  #container{ margin: 0 auto; width: 90%; /* Lets the background show on the left and 
+  right edges of desktops */}
+  article section { width: 31%; /* Whenever you float, you must have a width. What is the
+  left and right margin? Look above for the answer. */}
+  article section h2 { font-size: 110%;}
+  article section p {min-height: 175px; /* Compensates for shorter and longer paragraphs
+    so the Learn More button is at the same place in each section */ line-height: 1.25; font-size: 100%;}
+  footer section { float: left; width: 25%; margin: 0em; padding: 0em;}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #wrapper { margin: 0 auto; width: 100%;}
+  article section { width: 48%; }
+  article section h2 { font-size: 1.5em;}
+  article section p { min-height: 150px;}
+  .button {font-weight: bold; font-size: 1em; text-transform: uppercase; }
+  footer section { float: left; width: 50%; margin: 0em; padding: 0em; }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #wrapper { margin: 0 auto; width: 100%;}
+  article section { width: 48%; }
+  article section h2 { font-size: 1.5em;}
+  article section p { min-height: 150px; line-height: 1.5; font-size: 1.25em; }
+  .button {font-weight: bold; font-size: 1em; text-transform: uppercase; }
+  footer section { float: left; width: 50%; margin: 0em; padding: 0em; }
+}
+
+@media (max-width: 480px) {
+  #wrapper {margin: 0 auto; width: 100%;}
+  header p { display: none; /* Hide superfluous text */}
+  article section { float: none; width: 98%; font-size: 1.25em; }
+  .button { font-weight: bold; font-size: 1.25em; text-transform: uppercase;}
+  footer section { float: none; width: 100%; }
+}
