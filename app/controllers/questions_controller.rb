@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @questions = Question.all
+    @questions = Question.page(params[:page]).per_page(9)
     @num_questions = Question.total
     @questions.each do |question|
       @answers = question.answers

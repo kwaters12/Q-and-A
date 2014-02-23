@@ -61,13 +61,13 @@ feature 'Question' do
     expect(page).to have_content("vegan tacoes")
   end
 
-  scenario "User can delete questions" do
-    visit "/"
-    question = create :question, topic: "bacon recipes", body: "bacon and eggs?"
-    visit(destroy_question_path(question.id))
-    visit "/"
-    expect(page).not_to have_content("bacon recipes")
-  end
+  # scenario "User can delete questions" do
+  #   visit "/"
+  #   question = create :question, topic: "bacon recipes", body: "bacon and eggs?"
+  #   visit(destroy_question_path(question.id))
+  #   visit "/"
+  #   expect(page).not_to have_content("bacon recipes")
+  # end
 
   scenario "Users can see form for adding answers on the homepage" do
     create :question, topic: "bacon recipes", body: "bacon and eggs?"

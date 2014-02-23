@@ -11,7 +11,7 @@
             #question
               %h3
                 %span.topic Topic:
-                %span.topic-name #{question.topic}
+                %span.topic-name #{question.topic.truncate(38)}
               %h4 
                 %span.topic Question:
                 %span.topic-name #{question.body}
@@ -21,7 +21,7 @@
                   %h5           
                     %span.topic-name  #{answer.body}             
               = link_to "Edit", edit_question_path(question), class: "edit"
-               
+    = will_paginate @projects 
 
 / .script
 /   $('.input').keypress(function (e) {
