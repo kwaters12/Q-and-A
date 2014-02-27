@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# add app/assets/fonts to the asset path
+
+
 module QAndA
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -20,5 +23,7 @@ module QAndA
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.enforce_available_locales = true
+
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

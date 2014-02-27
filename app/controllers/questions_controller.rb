@@ -26,11 +26,11 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = current_user.questions.find(params[:id])
+    @question = Question.friendly.find(params[:id])
   end
 
   def update
-    @question = current_user.questions.find(params[:id])
+    @question = Question.friendy.find(params[:id])
     if @question.update_attributes(question_params)
       redirect_to questions_path
     else
@@ -39,10 +39,13 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     @answer  = Answer.new
     @answers = @question.answers
     @question.save
+    @commentable = @question
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   private

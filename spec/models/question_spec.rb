@@ -16,6 +16,10 @@ describe Question do
       question = build(:question, topic: nil)
       expect(question).to be_invalid
     end
+    it "must not have a topic that is more than 50 characters long" do
+      question = build(:question, topic: "a" * 51)
+      expect(question).to be_invalid
+    end
     it "requires a body" do
       question = build(:question, body: nil)
       expect(question).to be_invalid

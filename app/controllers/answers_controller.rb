@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :find_question
+  before_action :find_question, except: [:show]
 
   def index
     @answers = Answer.all
@@ -11,6 +11,15 @@ class AnswersController < ApplicationController
     @answer.user = current_user
     @answer.save
     redirect_to @question, notice: "Thanks for your answer"
+  end
+
+  def show
+
+    @answer = Answer.find(params[:id])
+    @question = @answer.question
+    @commentable = @answer
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def answer_params

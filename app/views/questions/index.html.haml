@@ -3,7 +3,7 @@
     %a.q-button{href: new_question_path} Ask A Question
     %h4 Number of Questions asked: #{@questions.total}
     
-   
+    = will_paginate @questions 
     - @questions.each do |question|
       = link_to question_path(question) do
         %article
@@ -19,9 +19,10 @@
               .answer   
                 - question.answers.each do |answer|                  
                   %h5           
-                    %span.topic-name  #{answer.body}             
+                    %li.topic-name  #{answer.body}             
               = link_to "Edit", edit_question_path(question), class: "edit"
-    = will_paginate @projects 
+
+   
 
 / .script
 /   $('.input').keypress(function (e) {

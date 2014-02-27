@@ -1,20 +1,38 @@
 @import 'bootstrap';
 
 
-body {background-color: #3E454C; color: #FFF6E5;word-wrap: break-word;}
+body {background-color: #3E454C; color: #FFF6E5; word-wrap: break-word; font-family: 'VegurRegular' sans-serif; }
 h3 {margin: 0;}
 h5 {margin: 0;padding: 5px;}
 a {color: white;}
 a:hover {text-decoration: none; color: #FFF6E5; }
-#name {float: right; text-align: right;}
-.navbar-default { background-color: #7ECEFD; border: 0; border-radius: 0; color: #FFF6E5;}
-#question {  padding: 10px; margin-bottom: 10px; }
-
+.nav {
+  a {color: #3E454C; }
+  a:a:hover {color: white;}
+}
+// .nav a {color: #3E454C; }
+// .nav a:hover {color: white;}
+#name {float: right; margin-top: 10px; margin-right: 10px; display: block;}
+#name a {color: #3E454C;}
+#name a:hover {color: white;}
+.nav-bar-header {width: 30%;}
+.navbar-default { background-color: #7ECEFD; border: 0; border-radius: 0; color: #FFF6E5; height: 50px;}
+.navbar-default a{ color: #FFF6E5;}
+.navbar-default .navbar-brand {color: #3E454C; padding-left: 50px;}
+.navbar-default .navbar-brand:hover {color: white; }
+#question {  padding: 10px; margin-bottom: 10px;}
+.nav-p {text-align: right;}
 .answer {background-color: #7ECEFD; font-size: 0.6em;  }
 .topic {color: #FF7F66; margin-top: 0; font-weight: bold;}
 .topic-name {margin-top: 0; font-weight: normal;}
+li.topic-name  {list-style-type: square; padding-left: 1em; text-indent: -1em;}
 .edit {background-color: #3E454C; color: #FF7F66;text-align: right; display: block; padding-right: 5px;}
 
+#question-show {
+  .answer {padding: 5px 0 5px 10px; width: 50%; margin: 10px 0 10px 10px;}
+
+
+}
 article {width: 100%; }
 article section { width: 30%; float: left; margin: 1%; }
 section { 
@@ -25,6 +43,7 @@ section {
   display: block;
   float: left;
   min-height: 275px;
+  height:450px;
 }
 
 section:hover { background: #4596c9; border: 1px solid #2185C5; }
@@ -61,12 +80,58 @@ section:hover { background: #4596c9; border: 1px solid #2185C5; }
   text-shadow:1px 1px 0px #528ecc;
 }
 .q-button:hover {
+  color: #3E454C;
   background-color:#4596c9; 
 }.q-button:active {
   position:relative;
   top:1px;
 }
-
+.pagination {
+  cursor: default;
+  /* self-clearing method: */ }
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .pagination .disabled {
+    color: white;
+    background-color: #2185C5; 
+    border: 1px solid #2185C5; }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2185C5;
+    color: white;
+    border: 1px solid #2185C5; }
+  .pagination a {
+    text-decoration: none;
+    color: #2185C5;
+    border: 1px solid #2185C5; }
+    .pagination a:hover, .pagination a:focus {
+      color: #7ECEFD;
+      border-color: #7ECEFD; }
+  .pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .pagination {
+    height: 1%; }
+  *:first-child + html .pagination {
+    overflow: hidden; }
 
 // media query code courtesy of tutorial from James
 @media (min-width: 980px) {
@@ -81,7 +146,7 @@ section:hover { background: #4596c9; border: 1px solid #2185C5; }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-  #wrapper { margin: 0 auto; width: 100%;}
+  #container{ margin: 0 auto; width: 90%;} 
   article section { width: 48%; }
   article section h2 { font-size: 1.5em;}
   article section p { min-height: 150px;}
@@ -90,7 +155,7 @@ section:hover { background: #4596c9; border: 1px solid #2185C5; }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  #wrapper { margin: 0 auto; width: 100%;}
+  #container { margin: 0 auto; width: 100%;}
   article section { width: 48%; }
   article section h2 { font-size: 1.5em;}
   article section p { min-height: 150px; line-height: 1.5; font-size: 1.25em; }
@@ -99,7 +164,7 @@ section:hover { background: #4596c9; border: 1px solid #2185C5; }
 }
 
 @media (max-width: 480px) {
-  #wrapper {margin: 0 auto; width: 100%;}
+  #container {margin: 0 auto; width: 100%;}
   header p { display: none; /* Hide superfluous text */}
   article section { float: none; width: 98%; font-size: 1.25em; }
   .button { font-weight: bold; font-size: 1.25em; text-transform: uppercase;}

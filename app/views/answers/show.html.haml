@@ -1,0 +1,14 @@
+
+.row
+  .col-md-12  
+    #question-show
+      %h3
+        %span.topic Question:
+        %span.topic-name #{@question.body}
+      %h3
+        %span.topic Answer:
+        %span.topic-name #{@answer.body}
+     
+%h2 Comments:
+= render 'comments/comments'
+= render 'comments/form'

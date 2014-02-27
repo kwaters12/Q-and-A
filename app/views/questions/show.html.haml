@@ -4,11 +4,18 @@
       %h3
         %span.topic Topic:
         %span.topic-name #{@question.topic}
-      %h4 Question:
-      = @question.body
-      %h3 Answers:     
-      - @answers.each do |answer|      
-        .answer
-          %h4           
-            %span.topic-name - #{answer.body}
+      %h4 
+        %span.topic Question:
+        %span.topic-name #{@question.body}
+      %h3 
+        %span.topic Answers:  
+        .answer  
+          - @answers.each do |answer|       
+            %h4           
+              %span.topic-name 
+              = link_to "#{answer.body}", answer_path(answer)
 = render "/answers/form", answer: @answer, question: @question
+%h2 
+  %span.topic Comments:
+= render 'comments/comments'
+= render 'comments/form'
