@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   before_action :find_question, except: [:show]
 
   def index
-    @answers = Answer.all
+    @answers = Answer.all    
   end
 
 

@@ -11,6 +11,12 @@ QAndA::Application.routes.draw do
     resources :comments
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :questions
+    end
+  end
+
   root "questions#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
