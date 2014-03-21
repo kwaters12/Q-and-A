@@ -20,9 +20,10 @@ gem 'letter_opener'
 gem 'will_paginate'
 gem 'friendly_id', '~> 5.0.0'
 gem 'stripe'
+gem 'faker'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'faker'
+  
   gem 'capybara', '~> 2.2.0'
   gem 'selenium-webdriver'
   gem "better_errors"
