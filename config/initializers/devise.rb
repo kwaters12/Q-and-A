@@ -12,6 +12,15 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  config.omniauth :google_oauth2, 
+                  ENV["GOOGLE_CLIENT_ID"],
+                  ENV["GOOGLE_CLIENT_SECRET"], 
+                  { 
+                    access_type: "offline", 
+                    scope: 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar' 
+                  } 
+  
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

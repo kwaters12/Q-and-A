@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-100.times do
-  question = FactoryGirl.create :question
-  5.times do
-    FactoryGirl.create :answer, question: question
+5.times do
+  activity = FactoryGirl.create :activity
+  10.times do
+    FactoryGirl.create :event, activity: activity
   end
 end

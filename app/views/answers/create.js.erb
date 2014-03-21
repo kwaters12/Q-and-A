@@ -1,0 +1,4 @@
+$("#answers").prepend("<%= j render 'answer', answer: @answer %>");
+$("#answer_body").val("");
+$("#answer_title").val("");
+$("#answer-count").text("<%= @answer.question.answers.count %>")

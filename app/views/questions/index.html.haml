@@ -19,10 +19,11 @@
               .answer   
                 - question.answers.each do |answer|                  
                   %h5           
-                    %li.topic-name  #{answer.body}             
-              = link_to "Edit", edit_question_path(question), class: "edit"
+                    %li.topic-name  #{answer.body} 
+              = link_to "Edit", edit_question_path(question), remote: true, class: "edit", "data-toggle" => "modal", "data-target" => "#edit-question"
+              = link_to "Delete", question, method: :delete, data: {confirm: "Are you sure you want to delete this question?"}, class: "edit"
+.modal.fade.in#edit-question{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
 
-   
 
 / .script
 /   $('.input').keypress(function (e) {

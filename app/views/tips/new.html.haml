@@ -1,0 +1,24 @@
+#stripe-error.alert-danger
+
+.col-md-5
+  .form-group
+    = label_tag "card_number"
+    = text_field_tag "card_number", '', class: "form-control" 
+  %br
+  .form-group
+    = label_tag "card_month", "Expiry"
+    .row
+      .col-md-6
+        = select_month nil, {add_month_numbers: true}, {id: "card_month", class: "form-control"}
+      .col-md-6
+        = select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 10}, {id: "card_year", class: "form-control"}
+    %br
+    = label_tag "card_cvc"
+    = text_field_tag "card_cvc", nil, class: "form-control" 
+    %br
+
+    = form_tag tips_path, id: "new_tip" do
+      = hidden_field_tag "stripe_card_token"
+      = label_tag "amount"
+      = select_tag "amount", options_for_select([5, 10, 15, 20, 25, 30]), class: "form-control"
+      = submit_tag "Submit", class: "btn btn-default"

@@ -12,7 +12,7 @@ a:hover {text-decoration: none; color: #FFF6E5; }
 }
 // .nav a {color: #3E454C; }
 // .nav a:hover {color: white;}
-#name {float: right; margin-top: 10px; margin-right: 10px; display: block;}
+#name {float: right; margin-top: 10px; margin-right: 50px; display: block;}
 #name a {color: #3E454C;}
 #name a:hover {color: white;}
 .nav-bar-header {width: 30%;}
@@ -23,16 +23,17 @@ a:hover {text-decoration: none; color: #FFF6E5; }
 #question {  padding: 10px; margin-bottom: 10px;}
 .nav-p {text-align: right;}
 .answer {background-color: #7ECEFD; font-size: 0.6em;  }
+.answer:hover {background-color: #2185C5;  font-size: 0.6em;  }
+.answer-form {float: right; padding-top: 75px;}
 .topic {color: #FF7F66; margin-top: 0; font-weight: bold;}
 .topic-name {margin-top: 0; font-weight: normal;}
 li.topic-name  {list-style-type: square; padding-left: 1em; text-indent: -1em;}
 .edit {background-color: #3E454C; color: #FF7F66;text-align: right; display: block; padding-right: 5px;}
 
 #question-show {
-  .answer {padding: 5px 0 5px 10px; width: 50%; margin: 10px 0 10px 10px;}
-
-
+  .answer {padding: 5px 0 5px 10px; width: 100%; margin: 10px 0 10px 10px;}
 }
+#edit-question{ color: #3E454C;}
 article {width: 100%; }
 article section { width: 30%; float: left; margin: 1%; }
 section { 

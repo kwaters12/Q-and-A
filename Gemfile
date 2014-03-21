@@ -12,10 +12,14 @@ gem 'haml', '~> 4.0.5'
 
 gem 'bootstrap-sass'
 gem 'factory_girl_rails', '~> 4.3.0'
+
 gem 'devise'
+gem "omniauth-google-oauth2"
+
 gem 'letter_opener'
 gem 'will_paginate'
 gem 'friendly_id', '~> 5.0.0'
+gem 'stripe'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'faker'

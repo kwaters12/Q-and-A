@@ -1,5 +1,5 @@
-.row
-  .col-md-12  
+=cache @question do
+  .col-md-6  
     #question-show
       %h3
         %span.topic Topic:
@@ -9,13 +9,17 @@
         %span.topic-name #{@question.body}
       %h3 
         %span.topic Answers:  
-        .answer  
-          - @answers.each do |answer|       
-            %h4           
-              %span.topic-name 
-              = link_to "#{answer.body}", answer_path(answer)
-= render "/answers/form", answer: @answer, question: @question
-%h2 
-  %span.topic Comments:
+        %span#answer-count= @question.answers.count            
+        - @answers.each do |answer| 
+          .answer           
+            = link_to answer_path(answer) do
+              %h4         
+                %span.topic-name#answers 
+                = "#{answer.body}"
+.col-md-6.answer-form                
+  = render "/answers/form", answer: @answer, question: @question
+.row
+
+%h2.span.topic Comments:
 = render 'comments/comments'
 = render 'comments/form'

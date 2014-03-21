@@ -15,13 +15,13 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = Question.friendly.new
   end
 
   def create
-    question = current_user.questions.new(question_params)
-    if question.save
-      UserMailer.thank_you(question).deliver
+    @question = current_user.questions.new(question_params)
+    if @question.save
+      UserMailer.thank_you(@question).deliver
       redirect_to root_url, notice: "Thank you!"
     else
       flash.now[:error] = "Sorry, your question can not be added"
@@ -34,13 +34,23 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.friendy.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     if @question.update_attributes(question_params)
-      redirect_to questions_path
+      redirect_to question_path
     else
       render :edit
     end
   end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.user == current_user
+      @question.destroy
+      redirect_to questions_path, notice: "Question Deleted Successfully"
+    else
+      redirect_to questions_path, notice: "Hey man, don't delete your buddy's question."      
+    end
+  end    
 
   def show
     @question = Question.friendly.find(params[:id])

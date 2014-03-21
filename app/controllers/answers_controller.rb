@@ -9,13 +9,19 @@ class AnswersController < ApplicationController
   def create
     @answer      = @question.answers.new(answer_params)
     @answer.user = current_user
-    @answer.save
-    redirect_to @question, notice: "Thanks for your answer"
+    if @answer.save
+      respond_to do |format|
+        format.html {redirect_to @question, notice: "Thanks for your answer"}
+        format.js 
+      end
+    else
+      render :new
+    end      
   end
 
   def show
 
-    @answer = Answer.find(params[:id])
+    @answer = Answer.friendly.find(params[:id])
     @question = @answer.question
     @commentable = @answer
     @comments = @commentable.comments
@@ -29,6 +35,6 @@ class AnswersController < ApplicationController
   private
 
   def find_question
-    @question = Question.find(params[:question_id])
+    @question = Question.friendly.find(params[:question_id])
   end
 end

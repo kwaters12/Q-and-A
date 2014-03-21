@@ -1,7 +1,8 @@
 QAndA::Application.routes.draw do
   get "comments/index"
   get "comments/new"
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+  
   resources :questions do
     resources :comments
     resources :answers 
@@ -10,6 +11,8 @@ QAndA::Application.routes.draw do
   resources :answers do
     resources :comments
   end
+
+  resources :tips, only: [:new, :create]
 
   namespace :api do
     namespace :v1 do

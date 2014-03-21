@@ -54,5 +54,20 @@ describe QuestionsController do
     end
   end
 
+  describe "#edit" do
+   
+    # it "allows a question to be updated" do
+    #   question = create :question, topic: 'bacon recipes', body: 'bacon and eggs?'
+    #   put :update, id: question.id, topic: 'baacon', body: 'noope'
+    #   expect(response).to have_content('baacon')
+    # end
+
+    it "responds to PUT" do
+      question = create :question, topic: 'bacon recipes', body: 'bacon and eggs?'
+      patch :update, id: question.id, question: {topic: 'beecon', body: 'boocon'}
+      expect(response).to redirect_to(question_url)
+    end
+  end
+
   
 end
