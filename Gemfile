@@ -21,6 +21,7 @@ gem 'will_paginate'
 gem 'friendly_id', '~> 5.0.0'
 gem 'stripe'
 gem 'faker'
+gem 'rails_12factor'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   
