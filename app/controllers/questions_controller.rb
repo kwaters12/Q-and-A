@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.new(question_params)
     if @question.save
-      UserMailer.thank_you(@question).deliver
+      # UserMailer.thank_you(@question).deliver
       redirect_to root_url, notice: "Thank you!"
     else
       flash.now[:error] = "Sorry, your question can not be added"
