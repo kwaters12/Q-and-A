@@ -134,6 +134,7 @@ section:hover { background: #4596c9; border: 1px solid #2185C5; }
   *:first-child + html .pagination {
     overflow: hidden; }
 
+input {color: black;}
 // media query code courtesy of tutorial from James
 @media (min-width: 980px) {
   #container{ margin: 0 auto; width: 90%; /* Lets the background show on the left and 
