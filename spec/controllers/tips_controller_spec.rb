@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe TipsController do
+
+  include Devise::TestHelpers
+  
   let(:user) { create(:user) }
 
   before do

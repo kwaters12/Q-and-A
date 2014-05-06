@@ -4,6 +4,8 @@ describe QuestionsController do
 
  include Devise::TestHelpers
 
+ let(:question) { create(:question) }
+
   before (:each) do
     user = create(:user)
     sign_in user
@@ -55,9 +57,16 @@ describe QuestionsController do
   end
 
   describe "#edit" do
+
+    it "updates the band information" do
+      put :update, id: question, question: { body: question.body }
+      question.body = "New Body"
+      expect(question.body).to eq("New Body")
+    end
    
     # it "allows a question to be updated" do
     #   question = create :question, topic: 'bacon recipes', body: 'bacon and eggs?'
+    #   get :edit, id: question.id
     #   put :update, id: question.id, topic: 'baacon', body: 'noope'
     #   expect(response).to have_content('baacon')
     # end
